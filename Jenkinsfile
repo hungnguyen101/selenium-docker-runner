@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Pull latest image'){
             steps{
-                sh "docker pull gahung206/selenium-docker:1.0" //not time consuming
+                sh "docker pull gahung206/selenium-docker:1.1" //not time consuming
             }
         }
 
