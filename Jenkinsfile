@@ -1,7 +1,6 @@
 pipeline{
     agent any
     stages{
-
         stage('Pull latest image'){
             steps{
                 sh "docker pull gahung206/selenium-docker" //not time consuming
@@ -19,11 +18,12 @@ pipeline{
                 sh "docker-compose up search-module-firefox  book-flight-module-chrome" //turn off colors in Jenkins
             }
         }
-
-        stage("Bring selenium grid down"){
-            steps {
-                sh "docker-compose down"
-            }
+    }
+    //archive test result
+    post{
+        always{
+            archiveArtifacts artifacts: 'output/**'
+            sh "docker-compose down"
         }
     }
 }
