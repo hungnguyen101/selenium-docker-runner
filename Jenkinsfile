@@ -16,7 +16,7 @@ pipeline{
 
         stage('Run Test'){
             steps{
-                sh "docker-compose up search-module book-flight-module" //turn off colors in Jenkins
+                sh "docker-compose up search-module-firefox  book-flight-module-chrome" //turn off colors in Jenkins
             }
         }
 
