@@ -10,7 +10,7 @@ pipeline{
 
         stage('Start selenium grid'){
             steps{
-                sh "docker-compose up --no-colors -d hub chrome firefox" //turn off colors in Jenkins
+                sh "docker-compose up --no-color -d hub chrome firefox" //turn off colors in Jenkins
             }
         }
 
