@@ -23,7 +23,7 @@ pipeline{
     post{
         always{
             sh "ls -al"
-            archiveArtifacts artifacts: '.'
+            archiveArtifacts artifacts: '**/output/**' //macos <==> linux :: /output/**
             sh "docker-compose down"
         }
     }
